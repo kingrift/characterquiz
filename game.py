@@ -1,6 +1,7 @@
 import pygame
 import pygame_textinput
 import os
+import random
 
 ## INITIALIZATION
 
@@ -25,6 +26,7 @@ imagedir = 'Assets/Images/'
 audiodir = 'Assets/Audio/'
 
 images = os.listdir(imagedir)
+random.shuffle(images)
 
 ## Functions
 
