@@ -4,10 +4,11 @@ import os
 import random
 
 ## INITIALIZATION
+screen_size = [800, 600]
 
 pygame.init()
 
-screen = pygame.display.set_mode([800, 600])
+screen = pygame.display.set_mode(screen_size)
 
 font = pygame.font.SysFont(None, 40)
 
@@ -83,7 +84,6 @@ while running:
                     index += 1
                     nameInput.value = ''
     else:
-        print("You got {} out of {} points!".format(points, len(images)))
         percentile = points / len(images)
         title = ''
         if percentile == 1:
@@ -96,7 +96,33 @@ while running:
             title = 'Rookie Weeb'
         else:
             title = 'Non-Weeb'
-        print(title)
+        
+        screen.fill(black)
+
+        titleText = pygame.font.SysFont(None, 80).render(title, True, pink)
+        screen.blit(titleText, titleText.get_rect(center=(screen_size[0]*0.5, screen_size[1]*0.15)))
+
+        scoreText = font.render("You got {} out of {} points!".format(points, len(images)), True, pink)
+        screen.blit(scoreText, scoreText.get_rect(center=(screen_size[0]*0.5, screen_size[1]*0.45)))
+
+        retryText = pygame.font.SysFont(None, 50).render('Retry!', True, pink)
+        screen.blit(retryText, retryText.get_rect(center=(screen_size[0]*0.5, screen_size[1]*0.75)))
+
+        quitText = pygame.font.SysFont(None, 50).render('Quit game!', True, pink)
+        screen.blit(quitText, quitText.get_rect(center=(screen_size[0]*0.5, screen_size[1]*0.85)))
+
+        for event in events:
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse = pygame.mouse.get_pos()
+                if screen_size[0]*0.5-100 <= mouse[0] <= screen_size[0]*0.5+100:
+                    if screen_size[1]*0.75-15 <= mouse[1] <= screen_size[1]*0.75+15:
+                        index = 0
+                        points = 0
+                        title = ''
+                    elif screen_size[1]*0.85-15 <= mouse[1] <= screen_size[1]*0.85+15:
+                        running = False
+
+
     pygame.display.update()
 
 pygame.quit()
