@@ -119,6 +119,7 @@ while running:
                         index = 0
                         points = 0
                         title = ''
+                        random.shuffle(images)
                     elif screen_size[1]*0.85-15 <= mouse[1] <= screen_size[1]*0.85+15:
                         running = False
 
