@@ -9,6 +9,8 @@ screen_size = [800, 600]
 pygame.init()
 
 screen = pygame.display.set_mode(screen_size)
+pygame.display.set_caption("Rift's Character Quiz")
+pygame.display.set_icon(pygame.image.load('Assets/Images/icon.png'))
 
 font = pygame.font.SysFont(None, 40)
 
@@ -23,7 +25,7 @@ points = 0
 index = 0
 
 nameInput = pygame_textinput.TextInputVisualizer(cursor_width=0, font_color=pink)
-imagedir = 'Assets/Images/'
+imagedir = 'Assets/Images/Characters/'
 audiodir = 'Assets/Audio/'
 
 images = os.listdir(imagedir)
