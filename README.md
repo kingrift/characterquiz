@@ -10,17 +10,17 @@ You have to write the name of the anime/manga/light-novel character, whose image
 
 1. Python3
 
-2. pygame > pip install pygame
+2. pygame `pip install pygame`
 
-3. pygame-textinput > pip install pygame-textinput
+3. pygame-textinput `pip install pygame-textinput`
 
 ## Running the game
 
 ### Linux
 
-1. Python > python3 game.py
+1. Python `python3 game.py`
 
-2. Shell > ./play
+2. Shell `./play`
 
 ### Windows
 
