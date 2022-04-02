@@ -29,3 +29,8 @@ Figure it out yourself!
 ### MacOS
 
 Figure it out yourself!
+
+
+## Legal disclaimer
+
+I do not own any of the assets used in this project.

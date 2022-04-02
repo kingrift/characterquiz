@@ -23,6 +23,7 @@ pink = (255, 105, 180)
 ## VARIABLES
 points = 0
 index = 0
+musicIndex = 0
 
 nameInput = pygame_textinput.TextInputVisualizer(cursor_width=0, font_color=pink)
 imagedir = 'Assets/Images/Characters/'
@@ -30,6 +31,9 @@ audiodir = 'Assets/Audio/'
 
 images = os.listdir(imagedir)
 random.shuffle(images)
+
+music = os.listdir(audiodir)
+random.shuffle(music)
 
 ## Functions
 
@@ -53,7 +57,15 @@ def checkAnswer(characterFile, nameInput):
     else:
         return False
 
+def playMusic(index):
+    pygame.mixer.music.load(audiodir + music[index])
+    pygame.mixer.music.play()
+    pygame.mixer.music.set_endevent(pygame.USEREVENT)
+    return index + 1
+
 ## GAME LOOP
+
+musicIndex = playMusic(musicIndex)
 
 running = True
 while running:
@@ -63,6 +75,11 @@ while running:
     for event in events:
         if event.type == pygame.QUIT:
             running = False
+        elif event == pygame.USEREVENT:
+            if musicIndex >= len(music):
+                musicIndex = 0
+            pygame.mixer.music.unload()
+            musicIndex = playMusic(musicIndex)
 
     if index < len(images):
         characterImg = pygame.image.load(imagedir + images[index])
