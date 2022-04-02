@@ -75,7 +75,7 @@ while running:
     for event in events:
         if event.type == pygame.QUIT:
             running = False
-        elif event == pygame.USEREVENT:
+        elif event.type == pygame.USEREVENT:
             if musicIndex >= len(music):
                 musicIndex = 0
             pygame.mixer.music.unload()
