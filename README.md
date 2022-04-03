@@ -8,7 +8,7 @@ You have to write the name of the anime/manga/light-novel character, whose image
 
 ## Modding
 
-You can add/remove characters to/from this game by adding/removing their image files in the /Assets/Images/Characters/ folder. The character's image should be named after the character (e.g. Sung Jin-Woo > jin-woo_sung.png). The image should be 230x345 pixels in size.
+You can add/remove characters to/from this game by adding/removing their image files in the /Assets/Images/Characters/ folder. The character's image should be named after the character (e.g. Sung Jin-Woo > jin-woo_sung.png). The image should be 230x345 pixels in size for the best outcome.
 
 You can add/remove background music to/from this game by adding/removing audio files in the /Assets/Audio/ folder. Only the audio files supported by pygame will work.
 
